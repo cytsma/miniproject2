@@ -21,3 +21,8 @@ house_elections %>%
 ```
 
 
+```{r}
+candidates %>%
+  arrange(cand_name) %>%
+  head(3)
+```
