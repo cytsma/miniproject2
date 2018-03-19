@@ -15,14 +15,3 @@ load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
 ```
-```{r}
-house_elections %>%
-  filter(state == "CA")
-```
-
-
-```{r}
-candidates %>%
-  arrange(cand_name) %>%
-  head(3)
-```
