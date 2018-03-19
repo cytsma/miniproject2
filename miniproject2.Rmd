@@ -16,3 +16,8 @@ load("committees.rda")
 load("contributions.rda")
 ```
 
+```{r}
+candidates %>%
+  arrange(cand_name) %>%
+  head(3)
+```
