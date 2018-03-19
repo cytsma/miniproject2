@@ -11,6 +11,7 @@ trying this out
 =======
 let's see if we have the same version now
 
+maybe this'll be it
 >>>>>>> 80be773f0faa8518ce9a4db909f6b2d79e629b45
 ```{r}
 load("house_elections.rda")
