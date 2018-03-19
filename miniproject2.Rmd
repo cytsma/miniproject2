@@ -15,4 +15,9 @@ load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
 ```
+```{r}
+house_elections %>%
+  filter(state == "CA")
+```
+
 
