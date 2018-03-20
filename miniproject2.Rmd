@@ -19,8 +19,9 @@ load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
 ```
+
 ```{r}
-state_list <- ("AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT",
+state_list <- c("AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT",
                "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID",
                "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH",
                "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE",
@@ -44,7 +45,7 @@ candidate_code <- candidates %>%
 ```{r}
 contributions_party <- contribution_code %>%
   left_join(candidate_code, by = "cand_id") %>%
-  filter(donor_state == cand_state) %>%
+  filter(donor_state == cand_state, cand_state %in% state_list) %>%
   group_by(party, cand_state) %>%
   summarize(sum = n())
 
