@@ -5,10 +5,9 @@ date: "3/19/2018"
 output: html_document
   code_folding: hide
 ---
-Notes for what to do:
-    -notes for donor by state and what party they are coming from
-    - merging candidates with contributions
-      - have the cand_id, 
+Goal:
+We are looking at the top 5 states for both parties that had the highest number of donations by donors from the same state as the candidates they were donating to. 
+
 ```{r}
 library(tidyverse)
 ```
