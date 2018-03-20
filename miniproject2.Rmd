@@ -18,9 +18,29 @@ Notes for what to do:
 ```{r}
 library(tidyverse)
 ```
+
 ```{r}
 load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
 load("contributions.rda")
 ```
+
+
+```{r}
+contribution_code <- contributions %>%
+  select(cand_id, state)
+
+candidate_code <- candidates %>%
+  mutate(party = cand_party_affiliation) %>%
+  filter(party == "DEM" | party == "REP") %>%
+  select(cand_id, party)
+```
+
+```{r}
+contributions_party <- contribution_code %>%
+  left_join(candidate_code, by = "cand_id") %>%
+  group_by(party, state) %>%
+  summarize(sum = n())
+```
+
