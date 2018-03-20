@@ -5,7 +5,16 @@ date: "3/19/2018"
 output: html_document
   code_folding: hide
 ---
-
+Notes for what to do:
+    - What is the party of the people running for re-election? 
+    - What is the proportion of people staying or new?
+    - occupation of donors? Ranked occupations of democrats and republicans
+        - group by party
+        - Merge candidate and contribution, by contributor because then we can equal their id to their name and party
+        - Then sort by party
+        - Group by occupation 
+        - Sum up the rows of each occupation
+        - Arrange by the greatest number of rows
 ```{r}
 library(tidyverse)
 ```
