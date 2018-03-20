@@ -79,12 +79,14 @@ ggplot(data = states) +
 =======
 >>>>>>> 74d8768889c2a5d9509df4174effa16ff47d8ae4
 
-```{r}
+```{r, label = "Addin Functions"}
 insertInAddin <- function() {
   rstudioapi::insertText(" %in% ")
 }
 
- %in% 
+wordcountaddin <- function(){
+  wordcountaddin::text_stats("my_file.Rmd")}
+
 ```
 
 =======
