@@ -46,15 +46,16 @@ contributions_party <- contribution_code %>%
   left_join(candidate_code, by = "cand_id") %>%
   filter(donor_state == cand_state, cand_state %in% state_list) %>%
   group_by(party, cand_state) %>%
-  summarize(sum = n())
+  summarize(sum = n(), num_cand = n_distinct(cand_id)) %>%
+  mutate(don_cand = round(sum / num_cand))
 
 contributions_dem <- contributions_party %>%
   filter(party == "DEM") %>%
-  arrange(desc(sum)) %>%
+  arrange(desc(don_cand)) %>%
   head(5)
 
 contributions_rep <- contributions_party %>%
   filter(party == "REP") %>%
-  arrange(desc(sum)) %>%
+  arrange(desc(don_cand)) %>%
   head(5)
 ```
