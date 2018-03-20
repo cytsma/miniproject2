@@ -13,6 +13,8 @@ We are looking at the top 5 states for democratic and republican parties that ha
 library(tidyverse)
 library(maps)
 library(mapdata)
+library(ggplot2)
+library(fiftystater)
 ```
 
 ```{r, label = "dataset import"}
@@ -36,6 +38,7 @@ state_list <- c("AL", "AZ", "AR", "CA", "CO", "CT",
 ```{r, label = "prepare datasets for merge"}
 contribution_code <- contributions %>%
   select(cand_id, state) %>%
+  group_by(state) %>%
   mutate(donor_state = state)
 
 candidate_code <- candidates %>%
@@ -86,6 +89,53 @@ insertInAddin <- function() {
 
 wordcountaddin <- function(){
   wordcountaddin::text_stats("my_file.Rmd")}
+
+```
+
+```{r}
+#this is a sample data. 
+data("fifty_states") # this line is optional due to lazy data loading
+
+crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
+
+# map_id creates the aesthetic mapping to the state name column in your data
+p <- ggplot(crimes, aes(map_id = state)) + 
+  # map points to the fifty_states shape data
+  geom_map(aes(fill = Assault), map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) +
+  coord_map() +
+  scale_x_continuous(breaks = NULL) + 
+  scale_y_continuous(breaks = NULL) +
+  labs(x = "", y = "") +
+  theme(legend.position = "bottom", 
+        panel.background = element_blank())
+
+p
+# add border boxes to AK/HI
+p + fifty_states_inset_boxes() 
+```
+
+```{r}
+data("fifty_states") # this line is optional due to lazy data loading
+#the issue that needs to be addressed. REP has 49 data values and DEM has 48. Which is an issue if we use fiftystater. I do not think that the issue is that the state labels are different. Fiftystater has the name of the state lower case and we have the abbrieviation. SO we could... fix that with join but I don't think that will fix it. So we gotta fixure out why there is missing data through the filtering process or we gotta see if we can somehow override this so that it doesn't return the error "neg interger."kk ily J
+Demoncracy1 <- data.frame(state = tolower(rownames(dem_map)), dem_map)
+
+# map_id creates the aesthetic mapping to the state name column in your data
+p <- ggplot(Demoncracy1, aes(map_id = state)) + 
+  # map points to the fifty_states shape data
+  geom_map(aes(fill = don_cand), map = fifty_states) + 
+  expand_limits(x = fifty_states$long, y = fifty_states$lat) +
+  coord_map() +
+  scale_x_continuous(breaks = NULL) + 
+  scale_y_continuous(breaks = NULL) +
+  labs(x = "", y = "") +
+  theme(legend.position = "bottom", 
+        panel.background = element_blank())
+
+p
+# add border boxes to AK/HI
+p + fifty_states_inset_boxes() 
+
 
 ```
 
