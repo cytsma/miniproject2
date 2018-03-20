@@ -6,7 +6,7 @@ output: html_document
   code_folding: hide
 ---
 Goal:
-We are looking at the top 5 states for both parties that had the highest number of donations by donors from the same state as the candidates they were donating to. 
+We are looking at the top 5 states for democratic and republican parties that had the highest number of donations by donors from the same state as the candidates they were donating to. 
 
 ```{r}
 library(tidyverse)
