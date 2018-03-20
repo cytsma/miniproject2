@@ -47,7 +47,8 @@ contributions_party <- contribution_code %>%
   filter(donor_state == cand_state, cand_state %in% state_list) %>%
   group_by(party, cand_state) %>%
   summarize(sum = n(), num_cand = n_distinct(cand_id)) %>%
-  mutate(don_cand = round(sum / num_cand))
+  mutate(don_cand = round(sum / num_cand)) %>%
+  select(-sum, -num_cand)
 
 contributions_dem <- contributions_party %>%
   filter(party == "DEM") %>%
