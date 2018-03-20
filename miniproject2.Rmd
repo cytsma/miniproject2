@@ -29,18 +29,29 @@ load("contributions.rda")
 
 ```{r}
 contribution_code <- contributions %>%
-  select(cand_id, state)
+  select(cand_id, state) %>%
+  mutate(donor_state = state)
 
 candidate_code <- candidates %>%
   mutate(party = cand_party_affiliation) %>%
   filter(party == "DEM" | party == "REP") %>%
-  select(cand_id, party)
+  select(cand_id, party, cand_state)
 ```
 
 ```{r}
 contributions_party <- contribution_code %>%
   left_join(candidate_code, by = "cand_id") %>%
-  group_by(party, state) %>%
+  filter(donor_state == cand_state) %>%
+  group_by(party, cand_state) %>%
   summarize(sum = n())
-```
 
+contributions_dem <- contributions_party %>%
+  filter(party == "DEM") %>%
+  arrange(desc(sum)) %>%
+  head(5)
+
+contributions_rep <- contributions_party %>%
+  filter(party == "REP") %>%
+  arrange(desc(sum)) %>%
+  head(5)
+```
