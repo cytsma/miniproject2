@@ -1,18 +1,19 @@
 ---
-title: "miniproject"
+title: "The States That Support Their Own"
+subtitle: "Mini Project 2"
 author: "Cai Ytsma, Juliane Bombosh, Sofia Salcedo"
-date: "3/19/2018"
+date: "3/22/2018"
 output: html_document
   code_folding: hide
 ---
-Goal:
+##Goal
 We are looking at the top 5 states for democratic and republican parties that had the highest number of donations by donors from the same state as the candidates they were donating to. 
 
-```{r}
+```{r, message = FALSE}
 library(tidyverse)
 ```
 
-```{r}
+```{r, }
 load("house_elections.rda")
 load("candidates.rda")
 load("committees.rda")
@@ -42,21 +43,24 @@ candidate_code <- candidates %>%
 ```
 
 ```{r}
-contributions_party <- contribution_code %>%
+contributions_state <- contribution_code %>%
   left_join(candidate_code, by = "cand_id") %>%
   filter(donor_state == cand_state, cand_state %in% state_list) %>%
-  group_by(party, cand_state) %>%
+  select(-donor_state) %>%
+  mutate(state = cand_state) %>%
+  group_by(party, state) %>%
   summarize(sum = n(), num_cand = n_distinct(cand_id)) %>%
   mutate(don_cand = round(sum / num_cand)) %>%
   select(-sum, -num_cand)
-
-contributions_dem <- contributions_party %>%
-  filter(party == "DEM") %>%
-  arrange(desc(don_cand)) %>%
-  head(5)
-
-contributions_rep <- contributions_party %>%
-  filter(party == "REP") %>%
-  arrange(desc(don_cand)) %>%
-  head(5)
 ```
+
+```{r}
+dem_map <- contributions_state %>%
+  filter(party == "DEM") %>%
+  select(-party)
+
+rep_map <- contributions_state %>%
+  filter(party == "REP") %>%
+  select(-party)
+```
+
