@@ -6,20 +6,27 @@ date: "3/22/2018"
 output: html_document
   code_folding: hide
 ---
-NEED A SINGLE COHERENT SENTENCE THAT EXPLAINS WHAT WE LEARAN AKA A THESIS
+<<<<<<< HEAD
+# Relevance: 
+**What we wanted to Achieve**
+We have taken FEC data to examine politically active local communities. We created two data graphics, one represents donations made to democrat candidates the other republican candidates. We wanted to compare parties, loyalty, and which states have the most active local politics in terms of donations. 
 
-In this project, we have taken FEC data to examine politically active local communities. We have created two data graphics, representing the Republican and Democratic parties and where the highest local political activity is in terms of donations within the state. 
+#What We Did:
+**Visual Cues & Data Source:**
+Our data is from the candidates and contributions rda files. We utilized the image of a map and color saturation per state. Each state's saturation is based on the number of donations made to a candidate of that state. The higher the saturation the more donations were made to candidates of the repective party per state.
+
+#Analysis:
+a single coherent sentence what we can learn from these data
+Looking at number of candidates, which should remove the bias of population
+Where are dems or repus focusing donations? Where are the more active political regions?
+Donations the most---> closer elections or long shots, or when they are trying to change the local political scene
 
 Where would donations to candidates be the highest? Would it be in areas where there is high variability in the local political scene and donations can have more influence? Or in areas that are the opposite, with a stable majority in place?
-
-Donations the most---> closer elections or long shots, or when they are trying to change the local political scene
 Side note: throw something in to connect to the title of "donating to their own" and the idea of ignoring DC, outside influences
 
-Graphic: saturation shows how high the donations are, darker saturation the more donations are being made towards each candidate per state
+**Link to the repository** !!! NEEDS TO BE IN FOOTNOTES!!!
 
-Looking at number of candidates, which should remove the bias of population
 
-Where are dems or repus focusing donations? Where are the more active political regions?
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(maps)
