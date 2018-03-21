@@ -78,10 +78,6 @@ ggplot(data = states) +
   guides(fill = FALSE) #remove legend
 ```
 
-<<<<<<< HEAD
-=======
->>>>>>> 74d8768889c2a5d9509df4174effa16ff47d8ae4
-
 ```{r, label = "Addin Functions"}
 insertInAddin <- function() {
   rstudioapi::insertText(" %in% ")
@@ -137,6 +133,3 @@ p + fifty_states_inset_boxes()
 
 
 ```
-
-=======
->>>>>>> 98e5865176d52f1c0f5f67f5113145b4040791a6
