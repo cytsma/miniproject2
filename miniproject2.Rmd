@@ -3,13 +3,13 @@ title: "The States That Support Their Own"
 subtitle: "Mini Project 2"
 author: "Cai Ytsma, Juliane Bombosh, Sofia Salcedo"
 date: "3/22/2018"
-output: html_document
-  code_folding: hide
+output: 
+  html_document:
+    code_folding: hide
 ---
-<<<<<<< HEAD
 # Relevance: 
 **What we wanted to Achieve**
-We have analyzed FEC data to examine politically active local communities. We created two data graphics, one representing donations made to Democratic candidates, the other representing Republican candidates. We wanted to compare party affiliation and enthusiasm measured in donation frequency, as well as examine the regions with higher political affiliation and why that might be.
+We analyzed FEC data to examine politically active local communities. We created two data graphics, one representing donations made to Democratic candidates, the other representing Republican candidates. We wanted to compare party affiliation and enthusiasm via donation frequency and examine the regions with higher political affiliation and why that might be.
 
 #What We Did:
 **Visual Cues & Data Source:**
@@ -115,35 +115,13 @@ wordcountaddin <- function(){
 
 ```
 
-```{r}
-#this is a sample data. 
-data("fifty_states") # this line is optional due to lazy data loading
 
-crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)
 
-# map_id creates the aesthetic mapping to the state name column in your data
-p <- ggplot(crimes, aes(map_id = state)) + 
-  # map points to the fifty_states shape data
-  geom_map(aes(fill = Assault), map = fifty_states) + 
-  expand_limits(x = fifty_states$long, y = fifty_states$lat) +
-  coord_map() +
-  scale_x_continuous(breaks = NULL) + 
-  scale_y_continuous(breaks = NULL) +
-  labs(x = "", y = "") +
-  theme(legend.position = "bottom", 
-        panel.background = element_blank())
-
-p
-# add border boxes to AK/HI
-p + fifty_states_inset_boxes() 
-```
-
-```{r}
-data("fifty_states") # the issue that needs to be addressed. REP has 49 data values and DEM has 48. Which is an issue if we use fiftystater. I do not think that the issue is that the state labels are different. Fiftystater has the name of the state lower case and we have the abbrieviation. SO we could... fix that with join but I don't think that will fix it. So we gotta fixure out why there is missing data through the filtering process or we gotta see if we can somehow override this so that it doesn't return the error "neg interger."kk ily J
+data("fifty_states") # the issue that needs to be addressed. REP has 49 data values and DEM has 48. Which is an issue if we use fiftystater I do not think that the issue is that the state labels are different. Fiftystater has the name of the state lower case and we have the abbrieviation. SO we could... fix that with join but I don't think that will fix it. So we gotta fixure out why there is missing data through the filtering process or we gotta see if we can somehow override this so that it doesn't return the error "neg interger."kk ily J
 Demoncracy1 <- data.frame(state = tolower(rownames(dem_map)), dem_map)
 
 # map_id creates the aesthetic mapping to the state name column in your data
-p <- ggplot(Demoncracy1, aes(map_id = state)) + 
+mapDemocrat <- ggplot(Demoncracy1, aes(map_id = state)) + 
   # map points to the fifty_states shape data
   geom_map(aes(fill = don_cand), map = fifty_states) + 
   expand_limits(x = fifty_states$long, y = fifty_states$lat) +
@@ -154,9 +132,7 @@ p <- ggplot(Demoncracy1, aes(map_id = state)) +
   theme(legend.position = "bottom", 
         panel.background = element_blank())
 
-p
+mapDemocrat
 # add border boxes to AK/HI
-p + fifty_states_inset_boxes() 
+mapDemocrat + fifty_states_inset_boxes() 
 
-
-```
