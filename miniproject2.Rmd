@@ -106,7 +106,7 @@ wordcountaddin <- function(){
 
 ```
 
-```{r}
+```{r, label = "example that needs to be cut from final"}
 #this is a sample data. 
 data("fifty_states") # this line is optional due to lazy data loading
 
@@ -129,7 +129,7 @@ p
 p + fifty_states_inset_boxes() 
 ```
 
-```{r}
+```{r, label = "Data Graphic Democrats"}
 data("fifty_states") # the issue that needs to be addressed. REP has 49 data values and DEM has 48. Which is an issue if we use fiftystater. I do not think that the issue is that the state labels are different. Fiftystater has the name of the state lower case and we have the abbrieviation. SO we could... fix that with join but I don't think that will fix it. So we gotta fixure out why there is missing data through the filtering process or we gotta see if we can somehow override this so that it doesn't return the error "neg interger."kk ily J
 Demoncracy1 <- data.frame(state = tolower(rownames(dem_map)), dem_map)
 
@@ -148,6 +148,5 @@ p <- ggplot(Demoncracy1, aes(map_id = state)) +
 p
 # add border boxes to AK/HI
 p + fifty_states_inset_boxes() 
-
 
 ```
