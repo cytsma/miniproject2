@@ -83,17 +83,7 @@ contributions_state <- contribution_code %>%
 ```
 
 ```{r}
-
-```
-
-```{r, label = "prepare data for graphic"}
-dem_map <- contributions_state %>%
-  filter(party == "DEM") %>%
-  select(-party)
-
-rep_map <- contributions_state %>%
-  filter(party == "REP") %>%
-  select(-party)
+MAKE FUNCTION WITH BELOW CODE
 ```
 
 ```{r, label = "plot graphics"}
