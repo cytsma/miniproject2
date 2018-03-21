@@ -9,7 +9,7 @@ output: html_document
 <<<<<<< HEAD
 # Relevance: 
 **What we wanted to Achieve**
-We have analyzed FEC data to examine politically active local communities. We created two data graphics, one representing donations made to Democratic candidates, the other representing Republican candidates. We wanted to compare party affiliation and enthusiasm measured in donation frequency, as well as examine the regions with higher political affiliation and why that might be.
+We analyzed FEC data to examine politically active local communities. We created two data graphics, one representing donations made to Democratic candidates, the other representing Republican candidates. We wanted to compare party affiliation and enthusiasm via donation frequency and examine the regions with higher political affiliation and why that might be.
 
 #What We Did:
 **Visual Cues & Data Source:**
