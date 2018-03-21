@@ -114,7 +114,7 @@ data("fifty_states") # the issue that needs to be addressed. REP has 49 data val
 Demoncracy1 <- data.frame(state = tolower(rownames(dem_map)), dem_map)
 
 # map_id creates the aesthetic mapping to the state name column in your data
-p <- ggplot(Demoncracy1, aes(map_id = state)) + 
+mapDemocrat <- ggplot(Demoncracy1, aes(map_id = state)) + 
   # map points to the fifty_states shape data
   geom_map(aes(fill = don_cand), map = fifty_states) + 
   expand_limits(x = fifty_states$long, y = fifty_states$lat) +
@@ -125,8 +125,8 @@ p <- ggplot(Demoncracy1, aes(map_id = state)) +
   theme(legend.position = "bottom", 
         panel.background = element_blank())
 
-p
+mapDemocrat
 # add border boxes to AK/HI
-p + fifty_states_inset_boxes() 
+mapDemocrat + fifty_states_inset_boxes() 
 
 ```
