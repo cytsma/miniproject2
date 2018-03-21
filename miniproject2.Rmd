@@ -9,7 +9,7 @@ output: html_document
 <<<<<<< HEAD
 # Relevance: 
 **What we wanted to Achieve**
-We have taken FEC data to examine politically active local communities. We created two data graphics, one represents donations made to democrat candidates the other republican candidates. We wanted to compare parties, loyalty, and which states have the most active local politics in terms of donations. 
+We have analyzed FEC data to examine politically active local communities. We created two data graphics, one representing donations made to Democratic candidates, the other representing Republican candidates. We wanted to compare party affiliation and enthusiasm measured in donation frequency, as well as examine the regions with higher political affiliation and why that might be.
 
 #What We Did:
 **Visual Cues & Data Source:**
@@ -19,7 +19,6 @@ Our data is from the candidates and contributions rda files. We utilized the ima
 a single coherent sentence what we can learn from these data
 Looking at number of candidates, which should remove the bias of population
 Where are dems or repus focusing donations? Where are the more active political regions?
-Donations the most---> closer elections or long shots, or when they are trying to change the local political scene
 
 Where would donations to candidates be the highest? Would it be in areas where there is high variability in the local political scene and donations can have more influence? Or in areas that are the opposite, with a stable majority in place?
 Side note: throw something in to connect to the title of "donating to their own" and the idea of ignoring DC, outside influences
