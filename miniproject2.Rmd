@@ -7,8 +7,15 @@ output: html_document
   code_folding: hide
 ---
 
-The goal of this data is to show the top 5 states for donations to the Democratic and Republican parties, focusing on the donations that were within state. This specific relationship can show who is politically involved in different states and where residents are motivated to donate to their local candidates.
+TRying to do: create two data graphics, donations to dems and repus, so that we can compare parties, loyalty, which states have the most active local politics in terms of donations
+Donations the most---> closer elections or long shots, or when they are trying to change the local political scene
 
+
+Graphic: saturation shows how high the donations are, darker saturation the more donations are being made towards each candidate per state
+
+Looking at number of candidates, which should remove the bias of population
+
+Where are dems or repus focusing donations? Where are the more active political regions?
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(maps)
