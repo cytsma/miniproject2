@@ -157,3 +157,7 @@ p + fifty_states_inset_boxes()
 
 
 ```
+
+Conclusions:
+
+Footnotes: add the link to the repository 
