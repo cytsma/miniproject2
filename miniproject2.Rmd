@@ -52,7 +52,7 @@ contributions_state <- contribution_code %>%
   left_join(candidate_code, by = "cand_id") %>%
   filter(donor_state == cand_state, cand_state %in% state_list) %>%
   select(-donor_state) %>%
-  mutate(state = cand_state) %>%
+  mutate(state.2 = cand_state) %>%
   group_by(party, state) %>%
   summarize(sum = n(), num_cand = n_distinct(cand_id)) %>%
   mutate(don_cand = round(sum / num_cand)) %>%
@@ -116,8 +116,7 @@ p + fifty_states_inset_boxes()
 ```
 
 ```{r}
-data("fifty_states") # this line is optional due to lazy data loading
-#the issue that needs to be addressed. REP has 49 data values and DEM has 48. Which is an issue if we use fiftystater. I do not think that the issue is that the state labels are different. Fiftystater has the name of the state lower case and we have the abbrieviation. SO we could... fix that with join but I don't think that will fix it. So we gotta fixure out why there is missing data through the filtering process or we gotta see if we can somehow override this so that it doesn't return the error "neg interger."kk ily J
+data("fifty_states") # the issue that needs to be addressed. REP has 49 data values and DEM has 48. Which is an issue if we use fiftystater. I do not think that the issue is that the state labels are different. Fiftystater has the name of the state lower case and we have the abbrieviation. SO we could... fix that with join but I don't think that will fix it. So we gotta fixure out why there is missing data through the filtering process or we gotta see if we can somehow override this so that it doesn't return the error "neg interger."kk ily J
 Demoncracy1 <- data.frame(state = tolower(rownames(dem_map)), dem_map)
 
 # map_id creates the aesthetic mapping to the state name column in your data
