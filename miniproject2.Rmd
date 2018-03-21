@@ -6,8 +6,8 @@ date: "3/22/2018"
 output: html_document
   code_folding: hide
 ---
-##Goal
-We are looking at the top 5 states for democratic and republican parties that had the highest number of donations by donors from the same state as the candidates they were donating to. 
+
+The goal of this data is to show the top 5 states for donations to the Democratic and Republican parties, focusing on the donations that were within state. This specific relationship can show who is politically involved in different states and where residents are motivated to donate to their local candidates.
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
