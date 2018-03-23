@@ -2,7 +2,7 @@
 title: "The States That Support Their Own"
 subtitle: "Mini Project 2"
 author: "Cai Ytsma, Juliane Bombosh, Sofia Salcedo"
-date: "3/22/2018"
+date: "3/23/2018"
 output: 
   html_document:
     code_folding: hide
