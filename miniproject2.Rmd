@@ -30,12 +30,11 @@ library(tidyverse)
 library(maps)
 library(mapdata)
 library(ggplot2)
-<<<<<<< HEAD
+
 library(fiftystater)
 library(devtools)
-=======
 library(RColorBrewer)
->>>>>>> 414d90d1c6002f9874d2c0ab84e4c467421a1ad1
+
 ```
 
 ```{r, label = "dataset import"}
@@ -86,7 +85,7 @@ contributions_state <- contribution_code %>%
   select(-sum, -num_cand)
 ```
 
-<<<<<<< HEAD
+
 
 ```{r, label = "plot graphics"}
 
@@ -128,7 +127,7 @@ makeplot <- function(party1, color1) {
 makeplot("REP", "Reds")
 
 makeplot("DEM", "Blues")
->>>>>>> 414d90d1c6002f9874d2c0ab84e4c467421a1ad1
+
 ```
 
 ```{r, label = "Addin Functions"}
@@ -146,7 +145,6 @@ print(wordcount)
 
 ```
 
-<<<<<<< HEAD
 
 
 
@@ -170,12 +168,7 @@ mapDemocrat
 # add border boxes to AK/HI
 mapDemocrat + fifty_states_inset_boxes() 
 
-<<<<<<< HEAD
 
-```
-
-=======
->>>>>>> cf8611e3bfd3df7a0a81e045ee0012845ef2c2ec
 Conclusions:
 
 Footnotes: add the link to the repository 
