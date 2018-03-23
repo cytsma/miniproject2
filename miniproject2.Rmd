@@ -20,11 +20,6 @@ Donations can capture a glimpse of how politically active the community is in th
 
 **The highest donations in-state correspond with swing states, reflecting a generally understood idea in American politics- money is power and money has the power to win elections.**
 
-
-
-
-**Link to the repository** !!! NEEDS TO BE IN FOOTNOTES!!!
-
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(maps)
@@ -129,6 +124,8 @@ makeplot("DEM", "Blues") +
 
 ```
 
+
+
 #General Trends
 Donors contributed at higher rates in swing states, reflecting the understanding that money is power in elections. States that heavily lean towards one party had decreased donations in both parties because everyone in those states understand that donations will have less of an impact on the election compared to swing states. For that reason, donations will often flood into swing states from solid states because that is where money matters.
 
@@ -139,9 +136,9 @@ While the general trend of donations corresponded with swing states, Massachuset
 
 #Wyoming
 Wyoming is an odd case, because there are no recorded democratic donations present in the FEC data. The absence of data can point to errors in recording or perhaps strong apathy in the Democratic party in the solidly Republican state.
-```{r, label = "word count"}
 
-#go to tools <- addin and click on word count
+###Footnotes
+[Repository link](https://github.com/cytsma/miniproject2)
+{r, label = "word count"}
+
 wordcountaddin:::text_stats()
-```
-
