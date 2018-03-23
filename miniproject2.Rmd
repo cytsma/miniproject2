@@ -130,14 +130,6 @@ makeplot("DEM", "Blues") +
 
 ```
 
-```{r, label = "analytical"}
-mass <- contributions %>%
-   group_by(state)
-
-mass
-  
-```
-
 ```{r, label = "word count"}
 devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
 
