@@ -109,17 +109,3 @@ makeplot("REP", "Reds")
 makeplot("DEM", "Blues")
 ```
 
-```{r, label = "Addin Functions"}
-insertInAddin <- function() {
-  rstudioapi::insertText(" %in% ")
-}
-
-wordcountaddin <- function(){
-  wordcountaddin::text_stats("my_file.Rmd")}
-
-```
-
-Conclusions:
-
-Footnotes: add the link to the repository 
-
