@@ -82,6 +82,7 @@ contributions_state <- contribution_code %>%
   select(-sum, -num_cand)
 ```
 
+<<<<<<< HEAD
 ```{r, label = "prepare data for graphic"}
 dem_map <- contributions_state %>%
   filter(party == "DEM") %>%
@@ -90,6 +91,10 @@ dem_map <- contributions_state %>%
 rep_map <- contributions_state %>%
   filter(party == "REP") %>%
   select(-party)
+=======
+```{r}
+MAKE FUNCTION WITH BELOW CODE
+>>>>>>> ad4f720c5efe3a4cb8fadde57fd96fb4d219b73d
 ```
 
 ```{r, label = "plot graphics"}
@@ -135,3 +140,12 @@ mapDemocrat
 # add border boxes to AK/HI
 mapDemocrat + fifty_states_inset_boxes() 
 
+<<<<<<< HEAD
+
+```
+
+Conclusions:
+
+Footnotes: add the link to the repository 
+=======
+>>>>>>> 174ff8f6ae08795497cac1b16c8f269d01929d42
