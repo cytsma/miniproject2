@@ -130,6 +130,7 @@ makeplot("DEM", "Blues")
 
 ```
 
+checking whether my commits are working or not
 ```{r, label = "Addin Functions"}
 #installed the thing, but I still have to figure out how to make it read the document
 wordcountaddin <- function(wordcount){
