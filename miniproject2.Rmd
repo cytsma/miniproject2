@@ -30,11 +30,8 @@ library(tidyverse)
 library(maps)
 library(mapdata)
 library(ggplot2)
-
-library(fiftystater)
 library(devtools)
 library(RColorBrewer)
-
 ```
 
 ```{r, label = "dataset import"}
@@ -120,9 +117,11 @@ makeplot("DEM", "Blues")+
     labs(title= "Donations Made to Democrat Candidates", caption="Source: candidates.rda, contributions.rda")
 
 ```
-```{r, label = "To Further Interpret Data"}
-
-
+```{r, label = "analytical"}
+mass<- contributions %>%
+   group_by(state)
+mass
+  
 ```
 
 ```{r}
