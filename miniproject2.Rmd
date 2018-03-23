@@ -142,6 +142,9 @@ mass
 ```
 
 ```{r, label = "word count"}
+devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
+
+#go to tools <- addin and click on word count
 wordcountaddin:::text_stats()
 ```
 
