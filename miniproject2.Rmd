@@ -2,7 +2,7 @@
 title: "The States That Support Their Own"
 subtitle: "Mini Project 2"
 author: "Cai Ytsma, Juliane Bombosh, Sofia Salcedo"
-date: "3/22/2018"
+date: "3/23/2018"
 output: 
   html_document:
     code_folding: hide
@@ -32,6 +32,7 @@ library(mapdata)
 library(ggplot2)
 library(devtools)
 library(RColorBrewer)
+library(extrafont)
 ```
 
 ```{r, label = "dataset import"}
@@ -97,29 +98,26 @@ makeplot <- function(party1, color1) {
             arrange(order)
   
   ggplot(data = temp2) +
-    geom_polygon(aes(x = long, y = lat, fill = don_cand, group = region)) +
+    geom_polygon(aes(x = long, 
+                     y = lat, 
+                     fill = don_cand, 
+                     group = region)) +
     coord_fixed(1.3) +
     scale_x_continuous(breaks = NULL) + 
     scale_y_continuous(breaks = NULL) +
-    scale_fill_distiller(palette = color1, name = "Donations per Candidate", direction = 1) +
-    labs(x = "", y = "") +
+    scale_fill_distiller(palette = color1, 
+                         name = "Donations per Candidate", 
+                         direction = 1, 
+                         limits = c(0, 600),
+                         breaks = c(0, 300, 600)) +
     theme(legend.position = "bottom", 
           panel.background = element_blank(),
-          title = element_text(color= "#565151")
-          )
+          title = element_text(color= "#565151"), 
+          axis.title = element_blank(),
+          plot.title = element_text(face = "bold", size = 22, hjust = 0.5),
+          text = element_text(family = "Baskerville"))
 }
 ```
-
-#General Trends
-Donors contributed at higher rates in swing states, reflecting the understanding that money is power in elections. States that heavily lean towards one party had decreased donations in both parties because everyone in those states understand that donations will have less of an impact on the election compared to swing states. For that reason, donations will often flood into swing states from solid states because that is where money matters.
-
-Filtering out donations from out of state reflects the same trend as when donations from out of state are included- the donation rate is higher in swing states regardless, pointing towards the fact that individuals in swing states are likely more politically involved because they have to fight for the political direction of the party more often than a resident of a solidly Democrat or Republican state.
-
-#Romney Effect
-While the general trend of donations corresponded with swing states, Massachusetts stands out in donations to Republican candidates. This is likely due to the fact that Mitt Romney, the Republican candidate for President, was the former governor of Massachusetts. Massachusetts is a strongly democratic state, but the fact that Romney was from Massachusetts would encourage a subset of the population to donate.
-
-#Wyoming
-Wyoming is an odd case, because there are no recorded democratic donations present in the FEC data. The absence of data can point to errors in recording or perhaps strong apathy in the Democratic party in the solidly Republican state.
 
 ```{r, label = "graphics", warning = FALSE, message = FALSE}
 
@@ -131,6 +129,19 @@ makeplot("DEM", "Blues") +
 
 ```
 
+<<<<<<< HEAD
+=======
+#General Trends
+Donors contributed at higher rates in swing states, reflecting the understanding that money is power in elections. States that heavily lean towards one party had decreased donations in both parties because everyone in those states understand that donations will have less of an impact on the election compared to swing states. For that reason, donations will often flood into swing states from solid states because that is where money matters.
+
+Filtering out donations from out of state reflects the same trend as when donations from out of state are included- the donation rate is higher in swing states regardless, pointing towards the fact that individuals in swing states are likely more politically involved because they have to fight for the political direction of the party more often than a resident of a solidly Democrat or Republican state.
+
+#Romney Effect
+While the general trend of donations corresponded with swing states, Massachusetts stands out in donations to Republican candidates. This is likely due to the fact that Mitt Romney, the Republican candidate for President, was the former governor of Massachusetts. Massachusetts is a strongly democratic state, but the fact that Romney was from Massachusetts would encourage a subset of the population to donate.
+
+#Wyoming
+Wyoming is an odd case, because there are no recorded democratic donations present in the FEC data. The absence of data can point to errors in recording or perhaps strong apathy in the Democratic party in the solidly Republican state.
+>>>>>>> 6a76230f1a3e55f8dcaac629a18daf7f68f6c58a
 ```{r, label = "word count"}
 devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
 
