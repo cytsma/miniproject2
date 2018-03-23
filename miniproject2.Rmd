@@ -121,3 +121,8 @@ makeplot("DEM", "Blues")+
 
 ```
 
+```{r}
+wordcountaddin:::text_stats()
+
+```
+
