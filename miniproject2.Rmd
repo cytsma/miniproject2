@@ -101,8 +101,8 @@ makeplot <- function(party1, color1) {
     coord_fixed(1.3) +
     scale_x_continuous(breaks = NULL) + 
     scale_y_continuous(breaks = NULL) +
-    scale_fill_distiller(palette = color1, name = "Donations per Candidate", directions = 1, limits = c(0, 600),
-                     breaks = c(0, 300, 600)) +
+    scale_fill_distiller(palette = color1, name = "Donations per Candidate", direction = 1) +
+    labs(x = "", y = "") +
     theme(legend.position = "bottom", 
           panel.background = element_blank(),
           title = element_text(color= "#565151")
@@ -122,6 +122,7 @@ While the general trend of donations corresponded with swing states, Massachuset
 Wyoming is an odd case, because there are no recorded democratic donations present in the FEC data. The absence of data can point to errors in recording or perhaps strong apathy in the Democratic party in the solidly Republican state.
 
 ```{r, label = "graphics", warning = FALSE, message = FALSE}
+
 makeplot("REP", "Reds") +
     labs(title = "2011 - 2012 Republican Donations", caption = "Source: Federal Election Commission")
 
