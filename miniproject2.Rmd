@@ -25,7 +25,6 @@ Side note: throw something in to connect to the title of "donating to their own"
 
 **Link to the repository** !!! NEEDS TO BE IN FOOTNOTES!!!
 
-
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(maps)
@@ -147,6 +146,7 @@ print(wordcount)
 
 ```
 
+<<<<<<< HEAD
 
 
 
@@ -174,8 +174,9 @@ mapDemocrat + fifty_states_inset_boxes()
 
 ```
 
+=======
+>>>>>>> cf8611e3bfd3df7a0a81e045ee0012845ef2c2ec
 Conclusions:
 
 Footnotes: add the link to the repository 
-=======
->>>>>>> 174ff8f6ae08795497cac1b16c8f269d01929d42
+
