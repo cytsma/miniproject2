@@ -103,18 +103,21 @@ makeplot <- function(party1, color1) {
     coord_fixed(1.3) +
     scale_x_continuous(breaks = NULL) + 
     scale_y_continuous(breaks = NULL) +
-    scale_fill_distiller(palette = color1, direction = -1) +
+    scale_fill_distiller(palette = color1) +
     labs(x = "", y = "") +
     theme(legend.position = "bottom", 
-          panel.background = element_blank())
+          panel.background = element_blank(),
+          title = element_text(color= "#565151")
+          )
 }
 ```
 
 ```{r, warning = FALSE, message = FALSE}
-makeplot("REP", "Reds")+
-    labs(title= "Summertime and the Livin's Easy:
-                           Ozone and Solar Radiation Levels(1973)", caption="Source: airquality")
+makeplot("REP", "Reds") +
+    labs(title= "Donations Made to Republican Candidates", caption="Source: airquality")
 
-makeplot("DEM", "Blues")
+makeplot("DEM", "Blues")+
+    labs(title= "Donations Made to Democrat Candidates", caption="Source: candidates.rda, contributions.rda")
+
 ```
 
