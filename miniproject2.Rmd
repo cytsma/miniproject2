@@ -32,6 +32,7 @@ library(maps)
 library(mapdata)
 library(ggplot2)
 library(fiftystater)
+library(devtools)
 ```
 
 ```{r, label = "dataset import"}
@@ -82,13 +83,11 @@ contributions_state <- contribution_code %>%
   select(-sum, -num_cand)
 ```
 
-```{r}
-MAKE FUNCTION WITH BELOW CODE
-```
 
 ```{r, label = "plot graphics"}
-states <- map_data("state")
+
 #make function that assigns color (red/blue) and alpha (don_cand) to each region (state)
+
 ggplot(data = states) +
   geom_polygon(aes(x = long, y = lat, fill = region), color = "white") +
   coord_fixed(1.3) +
@@ -101,14 +100,21 @@ ggplot(data = states) +
 ```
 
 ```{r, label = "Addin Functions"}
-insertInAddin <- function() {
-  rstudioapi::insertText(" %in% ")
+#installed the thing, but I still have to figure out how to make it read the document
+wordcountaddin <- function(wordcount){
+  wordcountaddin::text_stats("miniproject2.Rmd")
 }
 
-wordcountaddin <- function(){
-  wordcountaddin::text_stats("my_file.Rmd")}
+#this is still a global variable...not showing the word count
+print(wordcount)
+
+
+#want to print word count at the end
+#printing the word count, need to figure out how to run the word count and not just call it
 
 ```
+
+
 
 
 
