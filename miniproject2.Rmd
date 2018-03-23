@@ -140,7 +140,6 @@ While the general trend of donations corresponded with swing states, Massachuset
 #Wyoming
 Wyoming is an odd case, because there are no recorded democratic donations present in the FEC data. The absence of data can point to errors in recording or perhaps strong apathy in the Democratic party in the solidly Republican state.
 ```{r, label = "word count"}
-devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE)
 
 #go to tools <- addin and click on word count
 wordcountaddin:::text_stats()
