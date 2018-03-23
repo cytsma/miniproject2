@@ -15,13 +15,13 @@ We analyzed FEC data to examine politically active local communities. We created
 **Visual Cues & Data Source:**
 Our data is from the candidates and contributions rda files. We utilized the image of a map and color saturation per state. Each state's saturation is based on the number of donations made to a candidate of that state. The higher the saturation the more donations were made to candidates of the repective party per state.
 
-#Analysis:
-a single coherent sentence what we can learn from these data
-Looking at number of candidates, which should remove the bias of population
-Where are dems or repus focusing donations? Where are the more active political regions?
-
 Where would donations to candidates be the highest? Would it be in areas where there is high variability in the local political scene and donations can have more influence? Or in areas that are the opposite, with a stable majority in place?
-Side note: throw something in to connect to the title of "donating to their own" and the idea of ignoring DC, outside influences
+Donations can capture a glimpse of how politically active the community is in that moment. 
+
+**The highest donations in-state correspond with swing states, reflecting a generally understood idea in American politics- money is power and money has the power to win elections.**
+
+
+
 
 **Link to the repository** !!! NEEDS TO BE IN FOOTNOTES!!!
 
@@ -112,6 +112,14 @@ makeplot <- function(party1, color1) {
 }
 ```
 
+#General Trends
+Donors contributed at higher rates in swing states, reflecting the understanding that money is power in elections. States that heavily lean towards one party had decreased donations in both parties because everyone in those states understand that donations will have less of an impact on the election compared to swing states. For that reason, donations will often flood into swing states from solid states because that is where money matters.
+
+#Romney Effect
+While the general trend of donations corresponded with swing states, Massachusetts stands out in donations to Republican candidates. This is likely due to the fact that Mitt Romney, the Republican candidate for President, was the former governor of Massachusetts. Massachusetts is a strongly democratic state, but the fact that Romney was from Massachusetts would encourage a subset of the population to donate.
+
+#Wyoming
+Wyoming is an odd case, because there are no recorded democratic donations present in the FEC data. The absence of data can point to errors in recording or perhaps strong apathy in the Democratic party in the solidly Republican state.
 ```{r, warning = FALSE, message = FALSE}
 makeplot("REP", "Reds") +
     labs(title= "Donations Made to Republican Candidates", caption="Source: airquality")
