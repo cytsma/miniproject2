@@ -1,14 +1,14 @@
 ---
 title: "The States That Support Their Own"
 subtitle: "Mini Project 2"
-author: "Cai Ytsma, Juliane Bombosh, Sofia Salcedo"
+author: "Cai Ytsma, Juliane Bombosch, Sofia Salcedo"
 date: "3/23/2018"
 output: 
   html_document:
     code_folding: hide
 ---
 ###Relevance: 
-**What we wanted to Achieve**
+**What We Wanted to Achieve:**
 We analyzed FEC data to examine politically active local communities. We created two data graphics, one representing donations made to Democratic candidates, the other representing Republican candidates. We wanted to compare party affiliation and enthusiasm via donation frequency and examine the regions with higher political affiliation and why that might be.
 
 ###What We Did:
