@@ -31,8 +31,12 @@ library(tidyverse)
 library(maps)
 library(mapdata)
 library(ggplot2)
+<<<<<<< HEAD
 library(fiftystater)
 library(devtools)
+=======
+library(RColorBrewer)
+>>>>>>> 414d90d1c6002f9874d2c0ab84e4c467421a1ad1
 ```
 
 ```{r, label = "dataset import"}
@@ -70,7 +74,7 @@ candidate_code <- candidates %>%
   select(cand_id, party, cand_state)
 ```
 
-```{r, label = "merge data and extract info"}
+```{r, label = "merge data and extract info", warning = FALSE}
 contributions_state <- contribution_code %>%
   left_join(candidate_code, by = "cand_id") %>%
   filter(donor_state == cand_state) %>%
@@ -83,6 +87,7 @@ contributions_state <- contribution_code %>%
   select(-sum, -num_cand)
 ```
 
+<<<<<<< HEAD
 
 ```{r, label = "plot graphics"}
 
@@ -97,6 +102,34 @@ ggplot(data = states) +
   theme(legend.position = "bottom", 
         panel.background = element_blank())+
   guides(fill = FALSE) #remove legend
+=======
+```{r, warning = FALSE, message = FALSE}
+makeplot <- function(party1, color1) {
+  
+  states <- map_data("state")
+  
+  temp <- contributions_state %>% 
+            filter(party == party1) %>%
+            select(-party)
+  
+  temp2 <- states %>%
+            left_join(temp, by = c("region" = "name")) %>%
+            arrange(order)
+  
+  ggplot(data = temp2) +
+    geom_polygon(aes(x = long, y = lat, fill = don_cand, group = region)) +
+    coord_fixed(1.3) +
+    scale_x_continuous(breaks = NULL) + 
+    scale_y_continuous(breaks = NULL) +
+    labs(x = "", y = "") +
+    theme(legend.position = "bottom", 
+          panel.background = element_blank())
+}
+
+makeplot("REP", "Reds")
+
+makeplot("DEM", "Blues")
+>>>>>>> 414d90d1c6002f9874d2c0ab84e4c467421a1ad1
 ```
 
 ```{r, label = "Addin Functions"}
