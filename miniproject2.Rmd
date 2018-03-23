@@ -124,8 +124,6 @@ makeplot("DEM", "Blues") +
 
 ```
 
-
-
 #General Trends
 Donors contributed at higher rates in swing states, reflecting the understanding that money is power in elections. States that heavily lean towards one party had decreased donations in both parties because everyone in those states understand that donations will have less of an impact on the election compared to swing states. For that reason, donations will often flood into swing states from solid states because that is where money matters.
 
