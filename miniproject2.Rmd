@@ -124,7 +124,7 @@ makeplot <- function(party1, color1) {
 makeplot("REP", "Reds") +
     labs(title = "2011 - 2012 Republican Donations", caption = "Source: Federal Election Commission")
 
-makeplot("DEM", "Blues") +
+makeplot("DEM", "PuBu") +
     labs(title = "2011 - 2012 Democratic Donations", caption = "Source: Federal Election Commission")
 
 ```
