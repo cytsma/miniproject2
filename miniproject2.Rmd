@@ -118,3 +118,8 @@ makeplot("REP", "Reds")+
 makeplot("DEM", "Blues")
 ```
 
+```{r}
+wordcountaddin:::text_stats()
+
+```
+
